@@ -1,19 +1,14 @@
 Docker PHPMyAdmin
 =================
 
-First off it appears this little container I set up for myself has gotten a lot more popular then I expected. I promise to be much more diligent about updates and will be looking to make improvements. Please feel free to make suggestions
+Forked from https://github.com/corbinu/docker-phpmyadmin to remove the database login for convenience (but not security!)
 
-Current PHPMyAdmin Version 4.4.9
+## Start a MySQL server container
 
-* Ubuntu 14.04
-* PHP 5.6
-* Nginx Mainline
-* MySQL 5.6
-* PHPMyAdmin 4.4.9 (configurable with Environment Variable)
-
-## Start MySQL
+This uses the https://hub.docker.com/_/mysql/ base container.
 
 `docker run --name phpmyadmin-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql`
 
-## Start PHPMyAdmin
-`docker run -d --link phpmyadmin-mysql:mysql -e MYSQL_USERNAME=root --name phpmyadmin -p 80 corbinu/docker-phpmyadmin`
+## Start PHPMyAdmin (this container)
+
+`docker run -d --link phpmyadmin-mysql:mysql -e MYSQL_USERNAME=root --name phpmyadmin -p 80 ahebrank/phpmyadmin`

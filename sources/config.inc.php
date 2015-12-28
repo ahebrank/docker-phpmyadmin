@@ -31,7 +31,7 @@ $i = 0;
  */
 $i++;
 /* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = "$MYSQL_PORT_3306_TCP_ADDR";
 $cfg['Servers'][$i]['port'] = "$MYSQL_PORT_3306_TCP_PORT";
@@ -40,6 +40,9 @@ $cfg['Servers'][$i]['compress'] = true;
 /* Select mysql if your server does not have mysqli */
 $cfg['Servers'][$i]['extension'] = 'mysqli';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
+/* bypass login */
+$cfg['Servers'][$i]['user'] = "$MYSQL_USERNAME"; 
+$cfg['Servers'][$i]['password'] = "$MYSQL_PASSWORD";
 
 /*
  * phpMyAdmin configuration storage settings.

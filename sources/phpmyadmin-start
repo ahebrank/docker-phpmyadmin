@@ -14,6 +14,8 @@ sed -i \
     -e "s|\$PMA_URI|$PMA_URI|g" \
     -e "s|\$MYSQL_PORT_3306_TCP_ADDR|$MYSQL_PORT_3306_TCP_ADDR|g" \
     -e "s|\$MYSQL_PORT_3306_TCP_PORT|$MYSQL_PORT_3306_TCP_PORT|g" \
+    -e "s|\$MYSQL_USERNAME|$MYSQL_USERNAME|g" \
+    -e "s|\$MYSQL_PASSWORD|$MYSQL_PASSWORD|g" \
     /www/config.inc.php
 
 service php5-fpm start
